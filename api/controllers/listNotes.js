@@ -42,8 +42,8 @@ module.exports = {
   },
   async updateNotes(req, res) {
     connection.query(
-      `UPDATE list_notes SET title = ?, notes = ? WHERE id = ? `,
-      [req.body.title, req.body.notes, req.body.id],
+      `UPDATE list_notes SET title = ?, notes = ?, updated_at = ? WHERE id = ? `,
+      [req.body.title, req.body.notes, req.body.updated_at, req.body.id],
       (error, results) => {
         // console.log('results ', results);
         res.status(201).send({
