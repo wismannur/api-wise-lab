@@ -3,7 +3,7 @@ const connection = require('../configDB')
 module.exports = {
   async getListNotes(req, res) {
     connection.query(
-      'SELECT * FROM list_notes',
+      'SELECT * FROM list_notes ORDER BY id DESC',
       (error, results) => {
         // console.log('results ', results);
         res.status(200).json(results);
